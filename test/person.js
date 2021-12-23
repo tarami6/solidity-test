@@ -10,4 +10,12 @@ contract('Person', (accounts) => {
       assert.equal(name, 'test');
     });
   });
+
+  describe('Rami should be hired', () => {
+    it('Is checking Ramis status', async () => {
+      const person = await Person.deployed();
+      const status = await person.hireRami(true);
+      assert.equal(status, 'Rami will start build the future on 20 Jan 2022');
+    });
+  });
 });
